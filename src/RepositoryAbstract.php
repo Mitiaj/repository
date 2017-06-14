@@ -4,14 +4,14 @@ declare(strict_mode=1);
 
 namespace BT\Repository;
 
+use BT\Repository\Contracts\Criteria;
+use BT\Repository\Contracts\Repository;
+use BT\Repository\Criteria\IdEquals;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Mitiaj\Repository\Contracts\Criteria;
-use Mitiaj\Repository\Contracts\Repository;
-use Mitiaj\Repository\Criteria\IdEquals;
 
 abstract class RepositoryAbstract implements Repository
 {
