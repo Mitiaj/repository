@@ -2,7 +2,7 @@
 
 declare(strict_mode=1);
 
-namespace Mitiaj\Repository\Criteria;
+namespace BT\Repository\Criteria;
 
 use Illuminate\Database\Eloquent\Builder;
 use Mitiaj\Repository\Contracts\Criteria;

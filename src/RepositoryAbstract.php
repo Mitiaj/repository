@@ -2,7 +2,7 @@
 
 declare(strict_mode=1);
 
-namespace Mitiaj\Repository;
+namespace BT\Repository;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\Pagination\Paginator;

@@ -2,7 +2,7 @@
 
 declare(strict_mode=1);
 
-namespace Mitiaj\Repository\Contracts;
+namespace BT\Repository\Contracts;
 
 use Illuminate\Database\Eloquent\Builder;
 

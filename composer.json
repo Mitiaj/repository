@@ -2,11 +2,11 @@
   "name": "betarpininku/repository",
   "description": "Repository pattern implementation",
   "keywords": ["repository", "laravel"],
-  "type": "project",
+  "type": "package",
 
   "autoload": {
     "psr-4": {
-      "BT\\" : "src/"
+      "BT\\Repository\\" : "src/"
     }
   },
 
