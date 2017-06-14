@@ -4,8 +4,8 @@ declare(strict_mode=1);
 
 namespace BT\Repository\Criteria;
 
+use BT\Repository\Contracts\Criteria;
 use Illuminate\Database\Eloquent\Builder;
-use Mitiaj\Repository\Contracts\Criteria;
 
 /**
  * Class CriteriaAbstract
