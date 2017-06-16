@@ -106,6 +106,8 @@ interface Repository
     public function delete(int $id): int;
 
 
+    public function first() : Model;
+
     /**
      * Load relations
      *

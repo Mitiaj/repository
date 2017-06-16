@@ -137,6 +137,17 @@ abstract class RepositoryAbstract implements Repository
         return $result;
     }
 
+    public function first(): Model
+    {
+        $this->applyAllCriteria();
+        $this->applyRelations();
+
+        $result = $this->model->first();
+        $this->reset();
+
+        return $result;
+    }
+
     public function with(array $relations): Repository
     {
         $this->relations = $relations;
