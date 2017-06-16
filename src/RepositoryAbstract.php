@@ -148,6 +148,18 @@ abstract class RepositoryAbstract implements Repository
         return $result;
     }
 
+    public function count(): int
+    {
+        $this->applyAllCriteria();
+        $this->applyRelations();
+
+        $result = $this->model->count();
+        $this->reset();
+
+        return $result;
+    }
+
+
     public function with(array $relations): Repository
     {
         $this->relations = $relations;

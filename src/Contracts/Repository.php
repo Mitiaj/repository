@@ -108,6 +108,8 @@ interface Repository
 
     public function first() : Model;
 
+    public function count() : int;
+
     /**
      * Load relations
      *
