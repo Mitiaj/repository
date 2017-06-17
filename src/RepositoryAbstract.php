@@ -6,6 +6,7 @@ namespace BT\Repository;
 
 use BT\Repository\Contracts\Criteria;
 use BT\Repository\Contracts\Repository;
+use BT\Repository\Criteria\CompareProperty;
 use BT\Repository\Criteria\IdEquals;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\Pagination\Paginator;
@@ -150,6 +151,10 @@ abstract class RepositoryAbstract implements Repository
 
     public function count(): int
     {
+        foreach ($attributes as $key => $value) {
+            $this->pushCriteria(new CompareProperty($key, '=', $value));
+        }
+
         $this->applyAllCriteria();
         $this->applyRelations();
 
@@ -159,6 +164,20 @@ abstract class RepositoryAbstract implements Repository
         return $result;
     }
 
+    public function exists(array $attributes = []): bool
+    {
+        foreach ($attributes as $key => $value) {
+            $this->pushCriteria(new CompareProperty($key, '=', $value));
+        }
+
+        $this->applyAllCriteria();
+        $this->applyRelations();
+
+        $result = $this->model->exists();
+        $this->reset();
+
+        return $result;
+    }
 
     public function with(array $relations): Repository
     {

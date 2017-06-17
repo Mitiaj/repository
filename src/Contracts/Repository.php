@@ -105,10 +105,20 @@ interface Repository
      */
     public function delete(int $id): int;
 
-
+    /**
+     * @return Model
+     */
     public function first() : Model;
 
-    public function count() : int;
+    /**
+     * @return int
+     */
+    public function count(array $attributes = []) : int;
+
+    /**
+     * @return bool
+     */
+    public function exists(array $attributes = []) : bool;
 
     /**
      * Load relations
