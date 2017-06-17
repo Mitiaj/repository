@@ -149,7 +149,7 @@ abstract class RepositoryAbstract implements Repository
         return $result;
     }
 
-    public function count(): int
+    public function count(array $attributes = []): int
     {
         foreach ($attributes as $key => $value) {
             $this->pushCriteria(new CompareProperty($key, '=', $value));
