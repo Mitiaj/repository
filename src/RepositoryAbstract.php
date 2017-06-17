@@ -103,7 +103,7 @@ abstract class RepositoryAbstract implements Repository
 
     public function create(array $attributes): Model
     {
-        $result = $this->create($attributes);
+        $result = $this->model->create($attributes);
         $this->reset();
 
         return $result;
