@@ -40,6 +40,6 @@ class CompareProperty extends CriteriaAbstract
     public function isValid(Builder $model): bool
     {
         return in_array($this->property, $model->getModel()->getFillable())
-            && in_array($this->operator, ['=', '>', '<']);
+            && in_array($this->operator, ['=', '>', '<', 'LIKE']);
     }
 }
