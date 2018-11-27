@@ -149,6 +149,17 @@ abstract class RepositoryAbstract implements Repository
         return $result;
     }
 
+    public function firstOrDefault(): ?Model
+    {
+        $this->applyAllCriteria();
+        $this->applyRelations();
+
+        $result = $this->model->first();
+        $this->reset();
+
+        return $result;
+    }
+
     public function count(array $attributes = []): int
     {
         foreach ($attributes as $key => $value) {
