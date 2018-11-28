@@ -21,11 +21,11 @@ class CompareProperty extends CriteriaAbstract
      */
     private $operator;
     /**
-     * @var string
+     * @var mixed
      */
     private $value;
 
-    public function __construct(string $property, string $operator, string $value)
+    public function __construct(string $property, string $operator, $value)
     {
         $this->property = $property;
         $this->operator = $operator;
